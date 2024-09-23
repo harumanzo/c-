@@ -3,11 +3,7 @@ using System;
 class MainClass {
     public static void Main(string[] args)
     {
-        //반복문 for(초기화;조건식;반복식){반복코드}
-        for (int i = 1; i < 11; i++) {
-            Console.WriteLine(i);
-        } 
-
+        
     }
   
 }
@@ -37,4 +33,11 @@ else (조건식){}
         } else {
             Console.WriteLine("제로");
         }
+
+//반복문 for(초기화;조건식;반복식){반복코드}
+        for (int i = 1; i < 11; i++) {
+            Console.WriteLine(i);
+
+        } 
+        //while(조건식){}
 */
