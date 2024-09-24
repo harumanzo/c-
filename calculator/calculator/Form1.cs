@@ -134,10 +134,22 @@ namespace calculator
 
         private void button11_Click(object sender, EventArgs e)
         {
-            firstOperand = Int32.Parse(display.Text);
-            display.Text = "";
-            operatorChangeFlag = true;
-            currentOperator = Operators.Subtract;
+            if (currentOperator == 0)
+            {
+                firstOperand = Int32.Parse(display.Text);
+                display.Text = "";
+                operatorChangeFlag = true;
+                currentOperator = Operators.Subtract;
+            }
+            else
+            {
+                secondOperand = Int32.Parse(display.Text);
+                firstOperand -= secondOperand;
+                secondOperand = 0;
+                display.Text = "";
+                operatorChangeFlag = true;
+                currentOperator = Operators.Subtract;
+            }
 
         }
 
@@ -147,6 +159,23 @@ namespace calculator
             display.Text = "";
             operatorChangeFlag = true;
             currentOperator = Operators.Multiply;
+
+            if (currentOperator == 0)
+            {
+                firstOperand = Int32.Parse(display.Text);
+                display.Text = "";
+                operatorChangeFlag = true;
+                currentOperator = Operators.Add;
+            }
+            else
+            {
+                secondOperand = Int32.Parse(display.Text);
+                firstOperand += secondOperand;
+                secondOperand = 0;
+                display.Text = "";
+                operatorChangeFlag = true;
+                currentOperator = Operators.Add;
+            }
         }
 
         private void button16_Click(object sender, EventArgs e)
@@ -155,6 +184,23 @@ namespace calculator
             display.Text = "";
             operatorChangeFlag = true;
             currentOperator = Operators.Divide;
+
+            if (currentOperator == 0)
+            {
+                firstOperand = Int32.Parse(display.Text);
+                display.Text = "";
+                operatorChangeFlag = true;
+                currentOperator = Operators.Add;
+            }
+            else
+            {
+                secondOperand = Int32.Parse(display.Text);
+                firstOperand += secondOperand;
+                secondOperand = 0;
+                display.Text = "";
+                operatorChangeFlag = true;
+                currentOperator = Operators.Add;
+            }
         }
 
         private void buttonAc_Click(object sender, EventArgs e)
@@ -178,8 +224,9 @@ namespace calculator
             }
             else if (currentOperator == Operators.Subtract)
             {
-                int sum = firstOperand - secondOperand;
-                display.Text = sum.ToString();
+                firstOperand -= secondOperand;
+                secondOperand = 0;
+                display.Text = firstOperand.ToString();
                 currentOperator = Operators.None;
             } else if(currentOperator == Operators.Multiply)
             {
