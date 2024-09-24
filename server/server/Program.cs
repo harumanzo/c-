@@ -11,4 +11,7 @@ HTTP/HTTPS->요청
 ASP.NET
 .NET과 C# 프로그래밍언어를 이용해 웹앱과 웹서비스를 만들기 위한 프레임워크
 웹브
+
+dotnet       new           webapp              -o                         MyWebApp             --no-https
+명령어 새로운 프로젝트    웹앱생성     출력할 폴더명 입력하는 명령어     폴더이름              https에서 필요한 인증서 사용하지 않겠다
 */
