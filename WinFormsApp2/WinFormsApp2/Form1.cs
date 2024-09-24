@@ -16,7 +16,8 @@ namespace WinFormsApp2
             {
                 MessageBox.Show("로그인에 성공했습니다.", "로그인");
             }
-            else {
+            else
+            {
                 MessageBox.Show("로그인에 실패했습니다.", "로그인");
             }
 

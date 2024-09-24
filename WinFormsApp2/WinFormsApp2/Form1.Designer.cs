@@ -61,6 +61,7 @@
             password.Size = new Size(233, 43);
             password.TabIndex = 2;
             password.Text = "비밀번호";
+            password.UseSystemPasswordChar = true;
             // 
             // signinbutton
             // 
