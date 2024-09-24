@@ -1,12 +1,53 @@
 ﻿
 using System;
+//클래스의 시작
+
+class Person
+{
+    //property(속성)
+    public string Name;
+    public string Birthday;
+    public string Gender;
+
+    public void Eat()
+    {
+        //먹는행위
+        Console.WriteLine(Name + "이(가) 아침을 먹습니다");
+
+    }
+    public void Walk()
+    {
+        //걷는행위
+        Console.WriteLine(Name + "이(가) 걷습니다");
+    }
+    public void Run()
+    {
+        //뛰는행위
+        Console.WriteLine(Name + "이(가) 뜁니다");
+    }
+}
+
 class MainClass {
     public static void Main(string[] args)
     {
+        //클래스:설계도 인스턴스:설계도기반 실체화한거
+        //객체 안의 정적이 ㄴ존재:attribute
+        //객체안의 동적인 존재:method
+
+        //코드 영역
+        Person p1;
+        p1 = new Person();
+        p1.Name = "용일";
+        p1.eat();
         
+
     }
   
 }
+
+
+
+//클래스의 끝
 
 /*
  변수
