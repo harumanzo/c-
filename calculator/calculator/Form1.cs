@@ -115,6 +115,7 @@ namespace calculator
         {
             
             if (currentOperator == 0)
+                /* 처음연산 즉*/
             {
                 firstOperand = Int32.Parse(display.Text);
                 display.Text = "";
@@ -177,26 +178,23 @@ namespace calculator
 
         private void button16_Click(object sender, EventArgs e)
         {
-            firstOperand = Int32.Parse(display.Text);
-            display.Text = "";
-            operatorChangeFlag = true;
-            currentOperator = Operators.Divide;
+            
 
             if (currentOperator == 0)
             {
                 firstOperand = Int32.Parse(display.Text);
                 display.Text = "";
                 operatorChangeFlag = true;
-                currentOperator = Operators.Add;
+                currentOperator = Operators.Divide;
             }
             else
             {
                 secondOperand = Int32.Parse(display.Text);
-                firstOperand += secondOperand;
+                firstOperand /= secondOperand;
                 secondOperand = 0;
                 display.Text = "";
                 operatorChangeFlag = true;
-                currentOperator = Operators.Add;
+                currentOperator = Operators.Divide;
             }
         }
 
@@ -237,8 +235,8 @@ namespace calculator
                     display.Text = "0으로 나눌수 없습니다."; 
                 }
                 else { 
-                int sum = firstOperand / secondOperand;
-                display.Text = sum.ToString();
+                firstOperand /= secondOperand;
+                display.Text = firstOperand.ToString();
                     currentOperator = Operators.None;
                 }
             }
