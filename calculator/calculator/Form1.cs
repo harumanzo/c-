@@ -115,7 +115,6 @@ namespace calculator
         {
             
             if (currentOperator == 0)
-                /* 처음연산 즉*/
             {
                 firstOperand = Int32.Parse(display.Text);
                 display.Text = "";
@@ -123,12 +122,35 @@ namespace calculator
                 currentOperator = Operators.Add;
             }
             else {
-                secondOperand = Int32.Parse(display.Text);
-                firstOperand +=secondOperand;
-                secondOperand = 0;
-                display.Text = "";
-                operatorChangeFlag = true;
-                currentOperator = Operators.Add;
+                if (currentOperator == Operators.Add) {
+                    secondOperand = Int32.Parse(display.Text);
+                    firstOperand += secondOperand;
+                    secondOperand = 0;
+                    display.Text = "";
+                    currentOperator = Operators.Add;
+                }else if(currentOperator == Operators.Subtract) {
+                    secondOperand = Int32.Parse(display.Text);
+                    firstOperand -= secondOperand;
+                    secondOperand = 0;
+                    display.Text = "";
+                    currentOperator = Operators.Add;
+                }
+                else if(currentOperator == Operators.Multiply)
+                {
+                    secondOperand = Int32.Parse(display.Text);
+                    firstOperand *= secondOperand;
+                    secondOperand = 0;
+                    display.Text = "";
+                    currentOperator = Operators.Add;
+                }else if(currentOperator == Operators.Divide)
+                {
+                    secondOperand = Int32.Parse(display.Text);
+                    firstOperand /= secondOperand;
+                    secondOperand = 0;
+                    display.Text = "";
+                    currentOperator = Operators.Add;
+                }
+
             }
 
         }
@@ -144,12 +166,38 @@ namespace calculator
             }
             else
             {
-                secondOperand = Int32.Parse(display.Text);
-                firstOperand -= secondOperand;
-                secondOperand = 0;
-                display.Text = "";
-                operatorChangeFlag = true;
-                currentOperator = Operators.Subtract;
+                if (currentOperator == Operators.Add)
+                {
+                    secondOperand = Int32.Parse(display.Text);
+                    firstOperand += secondOperand;
+                    secondOperand = 0;
+                    display.Text = "";
+                    currentOperator = Operators.Subtract;
+                }
+                else if (currentOperator == Operators.Subtract)
+                {
+                    secondOperand = Int32.Parse(display.Text);
+                    firstOperand -= secondOperand;
+                    secondOperand = 0;
+                    display.Text = "";
+                    currentOperator = Operators.Subtract;
+                }
+                else if (currentOperator == Operators.Multiply)
+                {
+                    secondOperand = Int32.Parse(display.Text);
+                    firstOperand *= secondOperand;
+                    secondOperand = 0;
+                    display.Text = "";
+                    currentOperator = Operators.Subtract;
+                }
+                else if (currentOperator == Operators.Divide)
+                {
+                    secondOperand = Int32.Parse(display.Text);
+                    firstOperand /= secondOperand;
+                    secondOperand = 0;
+                    display.Text = "";
+                    currentOperator = Operators.Subtract;
+                }
             }
 
         }
@@ -167,12 +215,38 @@ namespace calculator
             }
             else
             {
-                secondOperand = Int32.Parse(display.Text);
-                firstOperand *= secondOperand;
-                secondOperand = 0;
-                display.Text = "";
-                operatorChangeFlag = true;
-                currentOperator = Operators.Multiply;
+                if (currentOperator == Operators.Add)
+                {
+                    secondOperand = Int32.Parse(display.Text);
+                    firstOperand += secondOperand;
+                    secondOperand = 0;
+                    display.Text = "";
+                    currentOperator = Operators.Multiply;
+                }
+                else if (currentOperator == Operators.Subtract)
+                {
+                    secondOperand = Int32.Parse(display.Text);
+                    firstOperand -= secondOperand;
+                    secondOperand = 0;
+                    display.Text = "";
+                    currentOperator = Operators.Multiply;
+                }
+                else if (currentOperator == Operators.Multiply)
+                {
+                    secondOperand = Int32.Parse(display.Text);
+                    firstOperand *= secondOperand;
+                    secondOperand = 0;
+                    display.Text = "";
+                    currentOperator = Operators.Multiply;
+                }
+                else if (currentOperator == Operators.Divide)
+                {
+                    secondOperand = Int32.Parse(display.Text);
+                    firstOperand /= secondOperand;
+                    secondOperand = 0;
+                    display.Text = "";
+                    currentOperator = Operators.Multiply;
+                }
             }
         }
 
@@ -189,12 +263,38 @@ namespace calculator
             }
             else
             {
-                secondOperand = Int32.Parse(display.Text);
-                firstOperand /= secondOperand;
-                secondOperand = 0;
-                display.Text = "";
-                operatorChangeFlag = true;
-                currentOperator = Operators.Divide;
+                if (currentOperator == Operators.Add)
+                {
+                    secondOperand = Int32.Parse(display.Text);
+                    firstOperand += secondOperand;
+                    secondOperand = 0;
+                    display.Text = "";
+                    currentOperator = Operators.Divide;
+                }
+                else if (currentOperator == Operators.Subtract)
+                {
+                    secondOperand = Int32.Parse(display.Text);
+                    firstOperand -= secondOperand;
+                    secondOperand = 0;
+                    display.Text = "";
+                    currentOperator = Operators.Divide;
+                }
+                else if (currentOperator == Operators.Multiply)
+                {
+                    secondOperand = Int32.Parse(display.Text);
+                    firstOperand *= secondOperand;
+                    secondOperand = 0;
+                    display.Text = "";
+                    currentOperator = Operators.Divide;
+                }
+                else if (currentOperator == Operators.Divide)
+                {
+                    secondOperand = Int32.Parse(display.Text);
+                    firstOperand /= secondOperand;
+                    secondOperand = 0;
+                    display.Text = "";
+                    currentOperator = Operators.Divide;
+                }
             }
         }
 
