@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label1 = new Label();
+            display = new Label();
             tableLayoutPanel1 = new TableLayoutPanel();
             button16 = new Button();
             buttonPoint = new Button();
@@ -50,17 +50,17 @@
             tableLayoutPanel1.SuspendLayout();
             SuspendLayout();
             // 
-            // label1
+            // display
             // 
-            label1.Dock = DockStyle.Top;
-            label1.Font = new Font("맑은 고딕", 18F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(0, 0);
-            label1.Name = "label1";
-            label1.RightToLeft = RightToLeft.Yes;
-            label1.Size = new Size(801, 78);
-            label1.TabIndex = 0;
-            label1.Text = "0";
-            label1.TextAlign = ContentAlignment.MiddleLeft;
+            display.Dock = DockStyle.Top;
+            display.Font = new Font("맑은 고딕", 18F, FontStyle.Regular, GraphicsUnit.Point);
+            display.Location = new Point(0, 0);
+            display.Name = "display";
+            display.RightToLeft = RightToLeft.Yes;
+            display.Size = new Size(801, 78);
+            display.TabIndex = 0;
+            display.Text = "0";
+            display.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // tableLayoutPanel1
             // 
@@ -114,6 +114,7 @@
             buttonPoint.TabIndex = 14;
             buttonPoint.Text = ".";
             buttonPoint.UseVisualStyleBackColor = true;
+            buttonPoint.Click += buttonPoint_Click;
             // 
             // buttonZero
             // 
@@ -124,6 +125,7 @@
             buttonZero.TabIndex = 13;
             buttonZero.Text = "0";
             buttonZero.UseVisualStyleBackColor = true;
+            buttonZero.Click += buttonZero_Click;
             // 
             // buttonAC
             // 
@@ -164,7 +166,7 @@
             buttonSix.TabIndex = 6;
             buttonSix.Text = "6";
             buttonSix.UseVisualStyleBackColor = true;
-            buttonSix.Click += button7_Click;
+            buttonSix.Click += buttonSix_Click;
             // 
             // buttonFive
             // 
@@ -175,6 +177,7 @@
             buttonFive.TabIndex = 5;
             buttonFive.Text = "5";
             buttonFive.UseVisualStyleBackColor = true;
+            buttonFive.Click += buttonFive_Click;
             // 
             // buttonFour
             // 
@@ -185,6 +188,7 @@
             buttonFour.TabIndex = 4;
             buttonFour.Text = "4";
             buttonFour.UseVisualStyleBackColor = true;
+            buttonFour.Click += buttonFour_Click;
             // 
             // button4
             // 
@@ -216,6 +220,7 @@
             buttonTwo.TabIndex = 9;
             buttonTwo.Text = "2";
             buttonTwo.UseVisualStyleBackColor = true;
+            buttonTwo.Click += buttonTwo_Click;
             // 
             // buttonNine
             // 
@@ -226,6 +231,7 @@
             buttonNine.TabIndex = 2;
             buttonNine.Text = "9";
             buttonNine.UseVisualStyleBackColor = true;
+            buttonNine.Click += buttonNine_Click;
             // 
             // buttonThree
             // 
@@ -236,6 +242,7 @@
             buttonThree.TabIndex = 10;
             buttonThree.Text = "3";
             buttonThree.UseVisualStyleBackColor = true;
+            buttonThree.Click += buttonThree_Click;
             // 
             // buttonEight
             // 
@@ -246,6 +253,7 @@
             buttonEight.TabIndex = 1;
             buttonEight.Text = "8";
             buttonEight.UseVisualStyleBackColor = true;
+            buttonEight.Click += buttonEight_Click;
             // 
             // buttonseven
             // 
@@ -256,6 +264,7 @@
             buttonseven.TabIndex = 0;
             buttonseven.Text = "7";
             buttonseven.UseVisualStyleBackColor = true;
+            buttonseven.Click += buttonseven_Click;
             // 
             // button1
             // 
@@ -275,9 +284,9 @@
             ClientSize = new Size(801, 521);
             Controls.Add(button1);
             Controls.Add(tableLayoutPanel1);
-            Controls.Add(label1);
+            Controls.Add(display);
             Name = "Form1";
-            Text = "Form1";
+            Text = "계산기";
             Load += Form1_Load;
             tableLayoutPanel1.ResumeLayout(false);
             ResumeLayout(false);
@@ -285,7 +294,7 @@
 
         #endregion
 
-        private Label label1;
+        private Label display;
         private TableLayoutPanel tableLayoutPanel1;
         private Button button16;
         private Button buttonPoint;

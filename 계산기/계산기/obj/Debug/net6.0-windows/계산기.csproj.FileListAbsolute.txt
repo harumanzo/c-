@@ -1,0 +1,6 @@
+C:\Users\shuai\source\repos\c-\계산기\계산기\obj\Debug\net6.0-windows\계산기.Form1.resources
+C:\Users\shuai\source\repos\c-\계산기\계산기\obj\Debug\net6.0-windows\계산기.csproj.GenerateResource.cache
+C:\Users\shuai\source\repos\c-\계산기\계산기\obj\Debug\net6.0-windows\계산기.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\shuai\source\repos\c-\계산기\계산기\obj\Debug\net6.0-windows\계산기.AssemblyInfoInputs.cache
+C:\Users\shuai\source\repos\c-\계산기\계산기\obj\Debug\net6.0-windows\계산기.AssemblyInfo.cs
+C:\Users\shuai\source\repos\c-\계산기\계산기\obj\Debug\net6.0-windows\계산기.csproj.CoreCompileInputs.cache
