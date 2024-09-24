@@ -106,17 +106,30 @@ namespace calculator
 
         private void buttonFloat_Click(object sender, EventArgs e)
         {
-            string strNumber = display.Text += "0";
+            string strNumber = display.Text += ".";
             int intNumber = Int32.Parse(strNumber);
             display.Text = intNumber.ToString();
         }
 
         private void buttonPlus_Click(object sender, EventArgs e)
         {
-            firstOperand = Int32.Parse(display.Text);
-            display.Text = "";
-            operatorChangeFlag = true;
-            currentOperator = Operators.Add;
+            
+            if (currentOperator == 0)
+            {
+                firstOperand = Int32.Parse(display.Text);
+                display.Text = "";
+                operatorChangeFlag = true;
+                currentOperator = Operators.Add;
+            }
+            else {
+                secondOperand = Int32.Parse(display.Text);
+                firstOperand +=secondOperand;
+                secondOperand = 0;
+                display.Text = "";
+                operatorChangeFlag = true;
+                currentOperator = Operators.Add;
+            }
+
         }
 
         private void button11_Click(object sender, EventArgs e)
@@ -158,17 +171,23 @@ namespace calculator
             secondOperand = Int32.Parse(display.Text);
             if (currentOperator == Operators.Add)
             {
-                int sum = secondOperand + firstOperand;
-                display.Text = sum.ToString();
-            }else if (currentOperator == Operators.Subtract)
+                firstOperand += secondOperand;
+                secondOperand = 0;
+                display.Text = firstOperand.ToString();
+                currentOperator = Operators.None;
+            }
+            else if (currentOperator == Operators.Subtract)
             {
                 int sum = firstOperand - secondOperand;
                 display.Text = sum.ToString();
+                currentOperator = Operators.None;
             } else if(currentOperator == Operators.Multiply)
             {
                 int sum = firstOperand * secondOperand;
                 display.Text = sum.ToString();
-            }else if(currentOperator == Operators.Divide)
+                currentOperator = Operators.None;
+            }
+            else if(currentOperator == Operators.Divide)
             {
                 if (secondOperand==0) {
                     display.Text = "0으로 나눌수 없습니다."; 
@@ -176,6 +195,7 @@ namespace calculator
                 else { 
                 int sum = firstOperand / secondOperand;
                 display.Text = sum.ToString();
+                    currentOperator = Operators.None;
                 }
             }
         }
