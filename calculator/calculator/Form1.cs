@@ -1,5 +1,7 @@
 
 
+using System.Diagnostics.Eventing.Reader;
+
 namespace calculator
 {
     
@@ -154,10 +156,27 @@ namespace calculator
         private void buttonEqual_Click(object sender, EventArgs e)
         {
             secondOperand = Int32.Parse(display.Text);
-            if(currentOperator == Operators.Add)
+            if (currentOperator == Operators.Add)
             {
                 int sum = secondOperand + firstOperand;
                 display.Text = sum.ToString();
+            }else if (currentOperator == Operators.Subtract)
+            {
+                int sum = firstOperand - secondOperand;
+                display.Text = sum.ToString();
+            } else if(currentOperator == Operators.Multiply)
+            {
+                int sum = firstOperand * secondOperand;
+                display.Text = sum.ToString();
+            }else if(currentOperator == Operators.Divide)
+            {
+                if (secondOperand==0) {
+                    display.Text = "0으로 나눌수 없습니다."; 
+                }
+                else { 
+                int sum = firstOperand / secondOperand;
+                display.Text = sum.ToString();
+                }
             }
         }
     }
