@@ -155,26 +155,23 @@ namespace calculator
 
         private void button12_Click(object sender, EventArgs e)
         {
-            firstOperand = Int32.Parse(display.Text);
-            display.Text = "";
-            operatorChangeFlag = true;
-            currentOperator = Operators.Multiply;
+            
 
             if (currentOperator == 0)
             {
                 firstOperand = Int32.Parse(display.Text);
                 display.Text = "";
                 operatorChangeFlag = true;
-                currentOperator = Operators.Add;
+                currentOperator = Operators.Multiply;
             }
             else
             {
                 secondOperand = Int32.Parse(display.Text);
-                firstOperand += secondOperand;
+                firstOperand *= secondOperand;
                 secondOperand = 0;
                 display.Text = "";
                 operatorChangeFlag = true;
-                currentOperator = Operators.Add;
+                currentOperator = Operators.Multiply;
             }
         }
 
@@ -230,8 +227,8 @@ namespace calculator
                 currentOperator = Operators.None;
             } else if(currentOperator == Operators.Multiply)
             {
-                int sum = firstOperand * secondOperand;
-                display.Text = sum.ToString();
+                firstOperand *= secondOperand;
+                display.Text = firstOperand.ToString();
                 currentOperator = Operators.None;
             }
             else if(currentOperator == Operators.Divide)
